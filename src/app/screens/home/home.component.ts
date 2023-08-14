@@ -10,6 +10,7 @@ import { AppApiService } from 'src/app/core/services/app-api.service';
 export class HomeComponent implements OnInit {
   dogImages: any[] = [];
   numeroPagina: number = 0;
+  selectedBreedId: number | null = null; 
 
   constructor(
     private appService: AppApiService,
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
       const page = +params['page'] || 0;
       this.numeroPagina = page;
       this.fetchDogImages(page);
+      this.selectedBreedId = +params['breed_id'] || null; // Get selected breed_id
     });
   }
 

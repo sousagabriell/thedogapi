@@ -17,12 +17,18 @@ export class AppApiService {
 
   constructor(private http: HttpClient) { }
 
+  getGroups(limit: number, breedId: string): Observable<any[]> {
+    const params = new HttpParams()
+      .set('limit', String(limit))
+      .set('page', String(0))
+    return this.http.get<any[]>("https://api.thedogapi.com/v1/breeds", { headers: this.headers });
+  }
+
   getDogImages(limit: number, page: number): Observable<any[]> {
     const params = new HttpParams()
       .set('limit', String(limit))
       .set('has_breeds', '1')
-      .set('page', String(page));
-
+      .set('page', String(page))
     return this.http.get<any[]>(this.apiUrl, { headers: this.headers, params });
   }
 }

@@ -16,11 +16,42 @@
     background-color: #D9D9D9;
     border: none;
     border-radius: 18px;
-    width: 6%;
+    width: 6em;
 }
 .icon-user{
     background-color: #000000;
     border-radius: 50px;
     padding: 0 8% !important;
     margin-right: 4%;
+}
+/* Basic styling for the collapsible container */
+.collapsible {
+    border-radius: 15px;
+    border: none;
+    width: 8em;
+}
+
+/* Styling for the collapsible summary (button) */
+.collapsible-btn {
+    padding: 10px;
+    background-color: #DDDDDD;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Styling for the collapsible content */
+.collapsible-content {
+    padding: 10px;
+    display: none;
+}
+
+/* Show the content when the details element is open */
+.collapsible[open] .collapsible-content {
+    display: block !important;
+    position: absolute;
+    z-index: 999;
+    background-color: #d3d3d3;
+    border: 1px solid #6c757d;
+    border-radius: 15px;
+    width: 15%;
 }
